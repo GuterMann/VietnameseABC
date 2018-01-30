@@ -18,8 +18,13 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
 import { reducers } from './statemanagement/reducers';
-import { DictionaryComponent } from './dictionary/dictionary.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MaterialModule} from './material.module';
+
+import { DictionaryModule } from './dictionary/dictionary.module';
+import { AppRoutes } from './app.routes';
 
 
 @NgModule({
@@ -28,23 +33,19 @@ import { DictionaryComponent } from './dictionary/dictionary.component';
     SidebarComponent,
     NavbarComponent,
     DashboardComponent,
-    UserprofileComponent,
-    DictionaryComponent
+    UserprofileComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      { pathMatch: 'full', path: '', component: DashboardComponent },
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'user-profile', component: UserprofileComponent },
-      { path: 'dictionary', component: DictionaryComponent},
-      { path: '**', redirectTo: 'dashboard' , pathMatch: 'full'}
-    ]),
+    BrowserAnimationsModule,
+    MaterialModule,
+    RouterModule.forRoot(AppRoutes),
     HttpModule,
     HttpClientModule,
-    StoreModule.forRoot(reducers)
+    StoreModule.forRoot(reducers),
+    DictionaryModule
   ],
   providers: [],
   bootstrap: [AppComponent]
