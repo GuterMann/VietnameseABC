@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
     RouterModule.forChild([
       {
         path: 'dictionary',
-        component: DictionaryLayoutComponent
+        component: LookupComponent
       }, {
         path: 'dictionary/translation',
         component: TranslationComponent

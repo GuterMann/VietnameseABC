@@ -29,15 +29,11 @@ export class SidebarComponent implements OnInit {
   menuItemClicked($event): void {
     if ($event.hasOwnProperty('path')) {
       let resultName = 'Dashboard';
-      let resultId = 1;
       if ($event.path === 'user-profile') {
-        resultId = 2;
         resultName = 'UserProfile';
       } else if ($event.path === 'dictionary') {
-        resultId = 3;
         resultName = 'Dictionary';
       }
-      this.store.dispatch(new AmountChangeAction(resultId));
       this.store.dispatch(new SidebarSelectedItemChangedAction(resultName));
     }
   }

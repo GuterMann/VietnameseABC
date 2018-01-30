@@ -41,11 +41,11 @@ import { AppRoutes } from './app.routes';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
+    DictionaryModule,
     RouterModule.forRoot(AppRoutes),
     HttpModule,
     HttpClientModule,
-    StoreModule.forRoot(reducers),
-    DictionaryModule
+    StoreModule.forRoot(reducers)
   ],
   providers: [],
   bootstrap: [AppComponent]
